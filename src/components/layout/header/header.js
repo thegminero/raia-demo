@@ -44,7 +44,7 @@ export default function Header() {
         </div>
         <div className="items-end hidden text-sm bg-gray-900 bg-opacity-50 md:items-center w-full lg:text-base md:bg-transparent md:p-0 md:relative md:flex">
             <div className="flex-col w-full h-auto overflow-hidden bg-red-500 rounded-lg md:bg-transparent md:overflow-visible md:rounded-none md:relative md:flex md:flex-row">
-                <div className="flex flex-col items-end justify-center w-full space-x-6 text-center lg:space-x-8 md:w-2/3 md:mt-0 md:flex-row md:items-center">
+                <div className="flex bg-red-600 items-end justify-center w-full ">
                     {
                         headerCategoryOptions.map(
                             nav => <span className="flex items-center" key={nav.label}>
