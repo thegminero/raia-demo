@@ -1,6 +1,10 @@
-.ais-Hits-list{
+.search-results .ais-Hits-list{
     display: flex;
     flex-wrap: wrap;
+    min-width: 100%;
+}
+.search-results .ais-Hits{
+  min-width: 100%;
 }
 
 .ais-Pagination-list{

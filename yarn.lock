@@ -12,7 +12,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@algolia/autocomplete-core@npm:1.8.3":
+"@algolia/autocomplete-core@npm:1.8.3, @algolia/autocomplete-core@npm:^1.8.3":
   version: 1.8.3
   resolution: "@algolia/autocomplete-core@npm:1.8.3"
   dependencies:
@@ -7359,7 +7359,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"instantsearch.js@npm:4.54.1":
+"instantsearch.js@npm:4.54.1, instantsearch.js@npm:^4.54.1":
   version: 4.54.1
   resolution: "instantsearch.js@npm:4.54.1"
   dependencies:
@@ -11534,6 +11534,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "sanborns-prospect@workspace:."
   dependencies:
+    "@algolia/autocomplete-core": ^1.8.3
     "@algolia/autocomplete-js": ^1.7.1
     "@algolia/autocomplete-plugin-query-suggestions": ^1.7.1
     "@algolia/autocomplete-plugin-recent-searches": ^1.7.1
@@ -11546,6 +11547,7 @@ __metadata:
     algoliasearch: ^4.13.1
     autoprefixer: ^10.4.7
     eslint-config-react: ^1.1.7
+    instantsearch.js: ^4.54.1
     postcss: ^8.4.14
     ramda: ^0.28.0
     react: ^18.2.0

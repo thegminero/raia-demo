@@ -23,8 +23,10 @@ function App() {
           <div className="mx-auto">
             <InstantSearch indexName="sanborns_test" searchClient={searchClient}>
             <Configure
+              ruleContexts={['12345']}
               analytics
               hitsPerPage={48}
+              
               distinct
             />
               <Header />

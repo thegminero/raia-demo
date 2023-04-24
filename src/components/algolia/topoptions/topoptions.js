@@ -3,7 +3,7 @@ import { SortBy } from 'react-instantsearch-hooks-web';
 
 export default function TopOptions(){
 
-    return <div cllassName="catalogue-search-container col-md-12 flex flex-wrap">
+    return <div className="catalogue-search-container col-md-12 flex flex-wrap">
     <SortBy
         items={[
           { label: 'Featured', value: 'sanborns_test' },

@@ -48,7 +48,7 @@ export default function CardView({ hit, sendEvent }) {
             <span className="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ml-3">{hit.stock}</span>
         </div>: null}
         <div className="flex items-center w-full">
-        <div class="grid grid-cols-3 divide-x w-full items-center">
+        <div className="grid grid-cols-3 divide-x w-full items-center">
             <img className="w-" src="https://www.sanborns.com.mx/img/recoger-sanborns.svg" alt="pickup"/>
             {hit?.super_express ? <img className=" py-4" src="https://www.sanborns.com.mx/img/fullf.png" alt="express shipping"/> : null }
             {hit?.isfullfilment ? <span className="text-green-600 uppercase text-xs">envio gratis</span> : null }
