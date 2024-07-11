@@ -49,7 +49,7 @@ export default function SimpleAutocomplete(props) {
               </div>
               <div className="flex justify-between mb-4 flex-col"> 
                 <h5 className="text-xl font-bold leading-none text-gray-900 ">Sugestiones</h5>
-                  <Index indexName="sanborns_test_query_suggestions">
+                  <Index indexName="raia_test_price_asc">
                     <Configure hitsPerPage={8} /> 
                     <div className='query-suggestions items-center pt-2'>
                       <Hits hitComponent={QuerySuggestionTemplate}/>

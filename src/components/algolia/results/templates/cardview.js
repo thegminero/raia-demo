@@ -1,15 +1,5 @@
 import { useEffect } from 'react';
-import { Highlight } from 'react-instantsearch-hooks-web';
 
-const weekDays = {
-    0: "Domingo",
-    1: "Lunes",
-    2: "Martes",
-    3: "Miercoles",
-    4: "Jueves",
-    5: "Viernes",
-    6: "Sabado"
-}
 export default function CardView({ hit, sendEvent }) {
     useEffect(() => {
 
@@ -19,27 +9,16 @@ export default function CardView({ hit, sendEvent }) {
         currency: 'MXN',
     });
 
-    const calculateDelivery = (days) => {
-        const d = new Date();
-        let inDays = d.getDay() + days
-        let deliveryLabel = ``
-
-        if (days == 1) deliveryLabel = 'Llega manana'
-        else deliveryLabel = `Llega el ${weekDays[inDays]}`
-
-        return <span className="ml-2 inline-flex items-center justify-center shadow-lg my-2 mx-1 text-xs font-bold leading-none text-white bg-red-500 rounded-md">{deliveryLabel}</span>
-
-    }
 
     return <div className="w-full sm:w-72 h-96 rounded-md overflow-hidden shadow-lg my-2 mx-1 flex flex-col justify-between">
     <div calssName="w-full h-32">
-        <img className="object-scale-down h-48 w-96 rounded-t-lg" src={hit.images[0]?.link} alt={hit.title} />
+        <img className="object-scale-down h-48 w-96 rounded-t-lg" src={hit?.thumbnail} alt={hit?.name} />
     </div>
     <div className="px-5 pb-5">
         <a href="#">
-            <h5 className="text-xl truncate h-8 wrap font-semibold tracking-tight text-gray-900">{hit.title}</h5>
+            <h5 className="text-xl truncate h-8 wrap font-semibold tracking-tight text-gray-900">{hit?.name}</h5>
         </a>
-        {(hit.stock > 0) ? <div className="flex items-center mt-2.5 mb-5">
+        {(hit?.stock > 0) ? <div className="flex items-center mt-2.5 mb-5">
             <svg aria-hidden="true" className="w-5 h-5 text-yellow-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>First star</title><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
             <svg aria-hidden="true" className="w-5 h-5 text-yellow-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Second star</title><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
             <svg aria-hidden="true" className="w-5 h-5 text-yellow-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Third star</title><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
@@ -49,16 +28,18 @@ export default function CardView({ hit, sendEvent }) {
         </div>: null}
         <div className="flex items-center w-full">
         <div className="grid grid-cols-3 divide-x w-full items-center">
-            <img className="w-" src="https://www.sanborns.com.mx/img/recoger-sanborns.svg" alt="pickup"/>
-            {hit?.super_express ? <img className=" py-4" src="https://www.sanborns.com.mx/img/fullf.png" alt="express shipping"/> : null }
+            <img className="w-" src="
+https://www.drogaraia.com.br/_next/image?url=https%3A%2F%2Fs2.drogaraia.com.br%2Fskin%2Ffrontend%2Fdrogaraia%2Fdefault%2Fimages%2Fsvg%2Fmyorders-desk.svg%20&w=48&q=75" alt="pickup"/>
+            {hit?.super_express ? <img className=" py-4" src="
+https://www.drogaraia.com.br/_next/image?url=https%3A%2F%2Fs2.drogaraia.com.br%2Fskin%2Ffrontend%2Fdrogaraia%2Fdefault%2Fimages%2Fsvg%2Fmyorders-desk.svg%20&w=48&q=75" alt="express shipping"/> : null }
             {hit?.isfullfilment ? <span className="text-green-600 uppercase text-xs">envio gratis</span> : null }
             </div>
         </div>
         <div className="flex items-center justify-between">
         { (hit?.discount != 0) ?
                 <div className="special">
-                    <span className="line-through text-red-600 text-xl font-bold">{formatter.format(hit?.price)}</span>
-                    <span className="pl-2 text-2xl font-bold text-gray-900">{formatter.format(hit?.price*(hit?.discount/100))}</span> 
+                    {/* <span className="line-through text-red-600 text-xl font-bold">{formatter.format(hit?.valueTo)}</span> */}
+                    <span className="pl-2 text-2xl font-bold text-gray-900">{formatter.format(hit?.valueTo)}</span> 
                     
                 </div>
                 :

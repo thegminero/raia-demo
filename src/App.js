@@ -21,12 +21,12 @@ function App() {
     <div className="w-full pb-12 antialiased bg-white" data-tails-scripts="//unpkg.com/alpinejs">
         <Router>
           <div className="mx-auto">
-            <InstantSearch indexName="sanborns_test" searchClient={searchClient}>
+            <InstantSearch indexName="raia_test" searchClient={searchClient}>
             <Configure
               ruleContexts={['12345']}
               analytics
-              hitsPerPage={48}
-              
+              hitsPerPage={12}
+              analyticsTags={["tag1"]}
               distinct
             />
               <Header />

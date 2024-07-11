@@ -15,15 +15,14 @@ export default function Header() {
         console.log(location.pathname);
     }, [location]);
 
-    return <nav className="relative justify-between z-50 h-32 w-full select-none bg-red-500 shadow-md">
+    return <nav className="relative justify-between z-50 h-32 w-full select-none bg-white shadow-md">
         <div className="container w-full relative flex items-center justify-between h-24 mx-auto overflow-hidden font-medium md:overflow-visible lg:justify-center sm:px-4 md:px-2 lg:px-0">
             <div className="px-8 flex flex-col items-center items-end justify-center w-10 h-10 rounded-full cursor-pointer hover:bg-gray-100">
                 <svg className="w-6 h-6 text-white" x-show="!showMenu" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor" x-cloak=""><path d="M4 6h16M4 12h16M4 18h16"></path></svg>
             </div>
             <div className="flex items-center justify-start h-full ">
-                <Link to="/" className="inline-block py-4 md:py-0 pr-4 border-r-2 border-gray-200 ">
-                    
-                    <img src="https://www.sanborns.com.mx/img/logo_blc.svg" className="w-64" />
+                <Link to="/" className="inline-block py-8 md:py-0 pr-4 border-r-2 border-gray-200 ">
+                    <img src="https://www.drogaraia.com.br/_next/image?url=https%3A%2F%2Fs2.drogaraia.com.br%2Fskin%2Ffrontend%2Fdrogaraia%2Fdefault%2Fimages%2Fmedia%2Flogo.png&w=384&q=75" className="w-54 py-16" />
                 </Link>
                 <div className="px-4 w-24">
                     <ZipSelector />

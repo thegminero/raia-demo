@@ -27,7 +27,7 @@ function Searchbar(){
         aisSearchForm.addEventListener('onfocus', handleFocus)
     })
     return <SearchBox className="site-search w-full h-10 p-2 rounded-lg items-center"
-                        placeholder="¿Qué es lo que buscas?"/>
+                        placeholder="O que deseja encontrar?"/>
 }
 
 export default Searchbar;
