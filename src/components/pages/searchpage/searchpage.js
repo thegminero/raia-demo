@@ -46,7 +46,7 @@ export default function SearchPage() {
                 <div id="search-header" className="w-full z-30 top-0 px-6 py-1">
                     <div className="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 px-2 py-3">
 
-                        <Link to="/" className="uppercase flex items-center justify-around w-2/12 tracking-wide no-underline hover:no-underline font-bold text-gray-800 text-xl " to="/search">
+                        <Link to="/" className="uppercase flex items-center justify-around w-2/12 tracking-wide no-underline hover:no-underline font-bold text-gray-800 text-xl">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 width="22"

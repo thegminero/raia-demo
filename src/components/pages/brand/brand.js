@@ -10,18 +10,44 @@ import './brand.css';
 export default function BrandPage() {
     const { brand } = useParams();
     const { results } = useInstantSearch();
+    const [banner, setBanner] = useState(null);
     
     useEffect(() => {
-        // Show Request Data from the query
-        console.log(brand)
-
+        if (results && results?.renderingContent?.widgets && results?.renderingContent?.widgets?.banners) {
+            // Assuming you want to use the first banner in the array
+            const firstBanner = results.renderingContent.widgets.banners[0];
+            setBanner(firstBanner);
+        }
     }, [results]);
 
     return <div className="container max-w-lg px-4 mx-auto mt-px text-left md:max-w-none md:text-center">
 
                  {(brand)? <Configure filters={`brand:"L'Oréal"`} /> : null }   
             
-
+                {
+                    (banner) ?
+                    <div className="relative bg-white">
+            <div className="max-w-7xl mx-auto py-3 px-3 sm:px-6 lg:px-8">
+                <div className="sm:flex sm:items-center sm:justify-between">
+                    <div className="flex-1 min-w-0">
+                        {/* Banner Image */}
+                        <div className="relative">
+                            <img className="w-full h-auto" src={banner.image.urls[0].url} alt={banner.image.title} />
+                        </div>
+                        {/* Banner Title */}
+                        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white font-bold text-xl sm:text-2xl">{banner.image.title}</div>
+                    </div>
+                    <div className="mt-4 flex-shrink-0 sm:mt-0 sm:ml-4">
+                        {/* Banner Link */}
+                        <a href={banner.link.url} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-gray-800 bg-white hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                            Saiba mais
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        : null
+                }
         
         <section className="bg-white py-8">
         <div className="flex flex-wrap gap-2 mb-4">
@@ -32,7 +58,7 @@ export default function BrandPage() {
                 <div id="search-header" className="w-full z-30 top-0 px-6 py-1">
                     <div className="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 px-2 py-3">
 
-                        <Link to="/" className="uppercase flex items-center justify-around w-2/12 tracking-wide no-underline hover:no-underline font-bold text-gray-800 text-xl " to="/search">
+                        <Link to="/" className="uppercase flex items-center justify-around w-2/12 tracking-wide no-underline hover:no-underline font-bold text-gray-800 text-xl">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 width="22"

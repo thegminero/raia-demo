@@ -1,0 +1,31 @@
+div.query-suggestions > div.ais-Hits > ol.ais-Hits-list{
+    display: flex;
+    flex-wrap: nowrap ;
+    /* flex-direction: column !important;
+    max-height: 30em !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+}
+div.query-suggestions > div.ais-Hits{
+    min-width: 100%;
+    
+}
+div.flex.items-center.justify-between.mb-4.flex-col > div > div > ol{
+    /* flex-direction: column !important;
+    display: flex !important;
+    flex-wrap: wrap !important; */
+}
+div.auto-complete div.ais-Hits > ol.ais-Hits-list{
+    flex-direction: column !important;
+    display: flex;
+    flex-wrap: wrap;
+}
+div.auto-complete .ais-Hits, div.auto-complete .ais-Hits-list{
+    width: 100%;
+}
+ol.ais-Hits-list{
+    flex-direction: column !important;
+    max-height: 30em;
+    display: flex;
+    flex-wrap: wrap;
+}

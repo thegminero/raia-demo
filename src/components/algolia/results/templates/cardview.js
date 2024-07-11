@@ -11,7 +11,7 @@ export default function CardView({ hit, sendEvent }) {
 
 
     return <div className="w-full sm:w-72 h-96 rounded-md overflow-hidden shadow-lg my-2 mx-1 flex flex-col justify-between">
-    <div calssName="w-full h-32">
+    <div className="w-full h-32">
         <img className="object-scale-down h-48 w-96 rounded-t-lg" src={hit?.thumbnail} alt={hit?.name} />
     </div>
     <div className="px-5 pb-5">

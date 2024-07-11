@@ -6,6 +6,7 @@ import Searchbar from "../../algolia/searchbar/searchbar";
 import ZipSelector from "../../utils/zipselector/zipselector";
 import { Autocomplete } from "../../algolia/autocomplete/autocomplete";
 import SimpleAutocomplete from "../../algolia/simpleautocomplete/simpleautocomplete";
+import FederatedSearch from "../../algolia/federatedsearch/federatedsearch";
 
 export default function Header() {
 
@@ -31,7 +32,7 @@ export default function Header() {
             <div className="search-bar w-2/4">
                 {
                     (location.pathname === '/') ?
-                        <div><Searchbar /><SimpleAutocomplete /> </div>
+                        <div><Searchbar /><FederatedSearch /> </div>
                         :
                         <Searchbar />
                 }
