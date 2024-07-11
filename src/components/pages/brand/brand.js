@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { Hits, SortBy, ClearRefinements, Pagination, useInstantSearch, Configure } from 'react-instantsearch-hooks-web';
 import { Link } from 'react-router-dom';
-import Facets from '../../algolia/facets/facets';
 import ResultTemplate from '../../algolia/results/resultTemplate';
 
 import './brand.css';
