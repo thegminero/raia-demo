@@ -11466,6 +11466,39 @@ __metadata:
   languageName: node
   linkType: hard
 
+"raia-buildint-ui-demo@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "raia-buildint-ui-demo@workspace:."
+  dependencies:
+    "@algolia/autocomplete-core": ^1.8.3
+    "@algolia/autocomplete-js": ^1.7.1
+    "@algolia/autocomplete-plugin-query-suggestions": ^1.7.1
+    "@algolia/autocomplete-plugin-recent-searches": ^1.7.1
+    "@algolia/autocomplete-shared": ^1.8.3
+    "@algolia/autocomplete-theme-classic": ^1.7.1
+    "@headlessui/react": ^1.7.14
+    "@testing-library/jest-dom": ^5.16.4
+    "@testing-library/react": ^13.3.0
+    "@testing-library/user-event": ^13.5.0
+    algoliasearch: ^4.13.1
+    autoprefixer: ^10.4.7
+    eslint-config-react: ^1.1.7
+    instantsearch.js: ^4.54.1
+    postcss: ^8.4.14
+    ramda: ^0.28.0
+    react: ^18.2.0
+    react-dom: ^18.2.0
+    react-instantsearch-hooks: ^6.42.2
+    react-instantsearch-hooks-web: ^6.29.0
+    react-router-dom: ^6.3.0
+    react-scripts: 5.0.1
+    recoil: ^0.7.4
+    search-insights: ^2.2.1
+    tailwindcss: ^3.1.4
+    web-vitals: ^2.1.4
+  languageName: unknown
+  linkType: soft
+
 "ramda@npm:^0.28.0":
   version: 0.28.0
   resolution: "ramda@npm:0.28.0"
@@ -12157,39 +12190,6 @@ __metadata:
   checksum: cab8f25ae6f1434abee8d80023d7e72b598cf1327164ddab31003c51215526801e40b66c5e65d658a0af1e9d6478cadcb4c745f4bd6751f97d8644786c0978b0
   languageName: node
   linkType: hard
-
-"sanborns-prospect@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "sanborns-prospect@workspace:."
-  dependencies:
-    "@algolia/autocomplete-core": ^1.8.3
-    "@algolia/autocomplete-js": ^1.7.1
-    "@algolia/autocomplete-plugin-query-suggestions": ^1.7.1
-    "@algolia/autocomplete-plugin-recent-searches": ^1.7.1
-    "@algolia/autocomplete-shared": ^1.8.3
-    "@algolia/autocomplete-theme-classic": ^1.7.1
-    "@headlessui/react": ^1.7.14
-    "@testing-library/jest-dom": ^5.16.4
-    "@testing-library/react": ^13.3.0
-    "@testing-library/user-event": ^13.5.0
-    algoliasearch: ^4.13.1
-    autoprefixer: ^10.4.7
-    eslint-config-react: ^1.1.7
-    instantsearch.js: ^4.54.1
-    postcss: ^8.4.14
-    ramda: ^0.28.0
-    react: ^18.2.0
-    react-dom: ^18.2.0
-    react-instantsearch-hooks: ^6.42.2
-    react-instantsearch-hooks-web: ^6.29.0
-    react-router-dom: ^6.3.0
-    react-scripts: 5.0.1
-    recoil: ^0.7.4
-    search-insights: ^2.2.1
-    tailwindcss: ^3.1.4
-    web-vitals: ^2.1.4
-  languageName: unknown
-  linkType: soft
 
 "sanitize.css@npm:*":
   version: 13.0.0
