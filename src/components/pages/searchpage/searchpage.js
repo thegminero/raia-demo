@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react';
-import { Hits, SortBy, ClearRefinements, Pagination, useInstantSearch } from 'react-instantsearch-hooks-web';
+
+import { Hits, SortBy, ClearRefinements, Pagination, useInstantSearch, Index, Configure, useSearchBox } from 'react-instantsearch-hooks-web';
 import { Link } from 'react-router-dom';
 import Facets from '../../algolia/facets/facets';
 import ResultTemplate from '../../algolia/results/resultTemplate';
@@ -8,39 +8,38 @@ import './searchpage.css';
 
 export default function SearchPage() {
 
-    const { results } = useInstantSearch();
-    const [specialFilters, setSpecialFilters] = useState([]);
-    useEffect(() => {
-        // Show Request Data from the query
-        console.log(results)
-        if (results && results.userData) {
-            const userData = results?.userData;
-            if (userData) {
-                 // Show user data (from the manual rule)
-                console.log('User Data:', userData);
-                setSpecialFilters(userData[0]?.special_filters);
-            }
-        }
-        else{
-            setSpecialFilters([])
-        }
-    }, [results]);
+    //const { results } = useInstantSearch();
+    const { query } = useSearchBox();
+
+
+    function Hit({ hit, index }) {
+
+        const formattedURI = encodeURI(`/brand/${hit.brand}`);
+        return (
+            <Link
+                key={index}
+                to={formattedURI}
+                className="px-4 py-2 bg-gray-200 text-gray-800 rounded-full hover:bg-gray-300 mx-1 "
+            >
+                {hit.brand} Products
+            </Link>
+        );
+    }
 
     return <div className="container max-w-lg px-4 mx-auto mt-px text-left md:max-w-none md:text-center">
-        
-        
         <section className="bg-white py-8">
-        <div className="flex flex-wrap gap-2 mb-4">
-            {specialFilters?.map((pill, index) => (
-                    <Link
-                        key={index}
-                        to={pill.redirect}
-                        className="px-4 py-2 bg-gray-200 text-gray-800 rounded-full hover:bg-gray-300"
-                    >
-                        {pill.label}
-                    </Link>
-                ))}
-            </div>
+       
+                {query && (
+                    <Index indexName="raia_test_quick_filters">
+                        <Configure
+                        queryType="prefixLast"
+                        removeWordsIfNoResults="allOptional"/>
+                        <div className='query-suggestions flex mb-4'>
+                            <Hits hitComponent={Hit} />
+                        </div>
+                    </Index>
+                )}
+    
             <div className="container mx-auto flex items-center flex-wrap  pb-12">
 
                 <div id="search-header" className="w-full z-30 top-0 px-6 py-1">
@@ -87,9 +86,9 @@ export default function SearchPage() {
                                 </svg>
                                 <SortBy
                                     items={[
-                                    { label: 'Featured', value: 'raia_test' },
-                                    { label: 'Price (desc)', value: 'raia_test_price_desc' },
-                                    { label: 'Price (asc)', value: 'raia_test_price_asc' },
+                                        { label: 'Featured', value: 'raia_test' },
+                                        { label: 'Price (desc)', value: 'raia_test_price_desc' },
+                                        { label: 'Price (asc)', value: 'raia_test_price_asc' },
                                     ]}
                                 />
                             </a>
@@ -104,7 +103,7 @@ export default function SearchPage() {
                     </svg>
                     <ClearRefinements translations={{
                         resetButtonText: 'Quitar filtros',
-                    }}/>
+                    }} />
                 </div>
                 <div className="flex flex-wrap w-1/4">
                     <Facets />
@@ -113,7 +112,7 @@ export default function SearchPage() {
                     <Hits className="w-full" hitComponent={ResultTemplate} />
                 </div>
                 <div className="flex flex-wrap w-full">
-                    <Pagination className="flex w-full justify-center"/>  
+                    <Pagination className="flex w-full justify-center" />
                 </div>
             </div>
         </section>

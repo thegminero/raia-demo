@@ -7,12 +7,12 @@ import {
   useSearchParams,
 } from "react-router-dom";
 import { useEffect, useState } from 'react';
-import Home from './components/pages/home/home';
+//import Home from './components/pages/home/home';
 import { pageRoutes } from './components/routes/routes';
-import { useRecoilValue } from 'recoil';
+//import { useRecoilValue } from 'recoil';
 import { InstantSearch, Configure } from 'react-instantsearch-hooks-web';
 import algoliasearch from 'algoliasearch/lite';
-import { algoliaQueryTerm, algoliaUrlState } from './context/appstate';
+//import { algoliaQueryTerm, algoliaUrlState } from './context/appstate';
 
 const searchClient = algoliasearch(
   'MWN8IH23ME',
@@ -21,8 +21,8 @@ const searchClient = algoliasearch(
 
 function App() {
 
-  const algoliaState = useRecoilValue(algoliaUrlState);  
-  const algolyaQuery = useRecoilValue(algoliaQueryTerm)
+  //const algoliaState = useRecoilValue(algoliaUrlState);  
+  //const algolyaQuery = useRecoilValue(algoliaQueryTerm)
   const [searchParams, setSearchParams] = useSearchParams();
   const [query, setQuery] = useState('');
   const [category, setCategorie] = useState('');
